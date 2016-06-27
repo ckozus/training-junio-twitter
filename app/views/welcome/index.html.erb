@@ -2,6 +2,12 @@
 
 <ul>
   <% @tweets.each do |tweet| %>
-    <li><%= tweet.message %> de <b><%= tweet.user.email %> </b></li>
+    <li>
+      <%= tweet.message %> de <b><%= tweet.user.email %> </b>
+      <% if tweet.asset? %>
+        <br/>
+        <%= image_tag tweet.asset.url(:thumb) %>
+      <% end %>
+    </li>
   <% end %>
 </ul>
