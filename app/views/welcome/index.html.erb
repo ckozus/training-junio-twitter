@@ -1,2 +1,7 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<p>Ultimos tweets:</p>
+
+<ul>
+  <% @tweets.each do |tweet| %>
+    <li><%= tweet.message %> de <b><%= tweet.user.email %> </b></li>
+  <% end %>
+</ul>

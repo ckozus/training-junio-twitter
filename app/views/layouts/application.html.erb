@@ -8,6 +8,11 @@
 </head>
 <body>
 
+  <% if user_signed_in? %>
+    Hola <%= current_user.email %>!
+    <%= link_to 'Tweetear!', '#' %>
+  <% end %>
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
