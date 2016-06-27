@@ -9,8 +9,11 @@
 <body>
 
   <% if user_signed_in? %>
-    Hola <%= current_user.email %>!
-    <%= link_to 'Tweetear!', new_tweet_path %>
+    Hola <%= current_user.email %>!<br>
+    <%= link_to 'Tweetear!', new_tweet_path %><br>
+    <%= link_to 'Salir', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Ingresar', user_session_path %>
   <% end %>
 
   <p class="notice"><%= notice %></p>
