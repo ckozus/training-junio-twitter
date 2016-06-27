@@ -10,7 +10,7 @@
 
   <% if user_signed_in? %>
     Hola <%= current_user.email %>!
-    <%= link_to 'Tweetear!', '#' %>
+    <%= link_to 'Tweetear!', new_tweet_path %>
   <% end %>
 
   <p class="notice"><%= notice %></p>
