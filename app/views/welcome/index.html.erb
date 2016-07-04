@@ -3,7 +3,7 @@
 <ul>
   <% @tweets.each do |tweet| %>
     <li>
-      <%= tweet.message %> de <b><%= tweet.user.email %> </b>
+      <%= tweet.message %> de <%= link_to tweet.user.email, tweet.user %>
       <% if tweet.asset? %>
         <br/>
         <%= image_tag tweet.asset.url(:thumb) %>
