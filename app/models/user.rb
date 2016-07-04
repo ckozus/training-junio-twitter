@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :tweets
   has_many :followings
+  has_many :followees, through: :followings
 
   def follows?(other_user)
     if followings.where(followee_id: other_user.id).first
