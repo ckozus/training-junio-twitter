@@ -1,5 +1,13 @@
 <h1>Tweets de <%= @user.email  %></h1>
 
+<% if user_signed_in? && current_user != @user %>
+  <% if current_user.follows?(@user) %>
+    Ya lo estás siguiendo!
+  <% else %>
+    <%= button_to 'Seguir', user_followings_path(current_user, followee_id: @user.id) %>
+  <% end %>
+<% end %>
+
 <ul>
   <% @tweets.each do |tweet| %>
     <li><%= tweet.message %></li>
